@@ -1,0 +1,17 @@
+{% extends "cv/base.html" %}
+
+{% block content %}
+
+<p>Previous Work Experience</p>
+
+<ul>
+	{% for job in jobs %}
+		<li>
+			{{ job }}
+		</li>
+	{% empty %}
+		<li>Looks like no Jobs have been added yet</li>
+	{% endfor %}
+</ul>
+
+{% endblock content %}
