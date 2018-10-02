@@ -1,0 +1,17 @@
+{% extends "cv/base.html" %}
+
+{% block content %}
+
+<p>Relevant Skills</p>
+
+<ul>
+	{% for skill in skills %}
+		<li>
+			{{ skill.skill_name }}
+		</li>
+	{% empty %}
+		<li>Looks like no Skills have been added yet</li>
+	{% endfor %}
+</ul>
+
+{% endblock content %}

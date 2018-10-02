@@ -15,7 +15,7 @@ class Job(models.Model):
 		
 class JobDescription(models.Model):
 	"""Job Descriptors"""
-	job_title = models.ForeignKey('Job', on_delete=models.PROTECT)
+	job_title = models.ForeignKey(Job, on_delete=models.PROTECT)
 	description = models.TextField()
 	
 	def __str__(self):

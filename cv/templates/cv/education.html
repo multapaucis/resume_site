@@ -1,0 +1,21 @@
+{% extends "cv/base.html" %}
+
+{% block content %}
+
+<p>Education</p>
+
+<ul>
+	{% for school in education %}
+		<li>
+			{{ school.school_name }}
+			<ul>
+				<li>{{ school.degree }}</li>
+				<li>{{ school.location }}</li>
+			</ul>
+		</li>
+	{% empty %}
+		<li>Looks like no Education information has been added yet</li>
+	{% endfor %}
+</ul>
+
+{% endblock content %}

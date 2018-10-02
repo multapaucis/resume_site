@@ -8,6 +8,10 @@ app_name = 'cv'
 urlpatterns = [
     #home page
     path('', views.index, name='index'),
-    #show all work experienc
+    #show all work experience
     path('jobs', views.jobs, name='jobs'),
+    #show all education
+    path('education', views.education, name='education'),
+    #show all skills
+    path('skills' , views.skills, name='skills'),
 ]

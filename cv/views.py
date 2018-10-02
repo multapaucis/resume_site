@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Job, JobDescription
+from .models import Job, JobDescription, Education, Skill
 
 # Create your views here.
 def index(request):
@@ -8,8 +8,20 @@ def index(request):
 	return render(request, 'cv/index.html')
 
 def jobs(request):
-	'''SHow all Work Experience'''
+	'''Show all Work Experience'''
 	jobs = Job.objects.order_by('date_started')
 	descriptions = JobDescription.objects
 	context = {'jobs': jobs, 'descriptions': descriptions}
 	return render(request, 'cv/jobs.html', context)
+
+def education(request):
+	'''Show all Education'''
+	education = Education.objects.order_by('-date_started')
+	context = {'education': education}
+	return render(request, 'cv/education.html', context)
+
+def skills(request):
+	'''Show all Skills'''
+	skills = Skill.objects.order_by('skill_type')
+	context = {'skills': skills}
+	return render(request, 'cv/skills.html', context)
