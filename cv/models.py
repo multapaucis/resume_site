@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Job(models.Model):
 	"""Previous Jobs"""
-	title = models.CharField(max_length=200, primary_key=True)
+	title = models.CharField(max_length=200)
 	date_started = models.DateField()
 	date_finished = models.DateField()
 	location = models.CharField(max_length=200)
@@ -24,12 +24,15 @@ class JobDescription(models.Model):
 
 class Education(models.Model):
 	"""Previous Schools"""
-	school_name = models.CharField(max_length=200, primary_key=True)
+	school_name = models.CharField(max_length=200)
 	date_started = models.DateField()
 	date_finished = models.DateField()
 	location = models.CharField(max_length=200)
 	degree = models.CharField(max_length=200)
 	
+	class Meta:
+		verbose_name_plural = 'Education'
+		
 	def __str__(self):
 		'''Returns a string with the School Nme'''
 		return self.school_name
@@ -37,7 +40,7 @@ class Education(models.Model):
 
 class Skill(models.Model):
 	"""Releveant Skills"""
-	skill_name = models.CharField(max_length=200, primary_key=True)
+	skill_name = models.CharField(max_length=200)
 	skill_type = models.CharField(max_length=200)
 	
 	def __str__(self):
