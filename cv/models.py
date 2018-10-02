@@ -9,6 +9,11 @@ class Job(models.Model):
 	location = models.CharField(max_length=200)
 	company = models.CharField(max_length=200)
 	
+	def getDescriptions(self):
+		return JobDescription.objects.filter(job_title=self)
+
+	descriptions = property(getDescriptions)
+	
 	def __str__(self):
 		'''Returns a string with the Job Title'''
 		return self.title

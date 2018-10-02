@@ -8,6 +8,13 @@
 	{% for job in jobs %}
 		<li>
 			{{ job }}
+			<ul>
+				{% for desc in job.descriptions %}
+					<li> {{ desc.description }} </li>
+				{% empty %}
+					<li>Looks like no Description has been added yet</li>
+				{% endfor %}
+			</ul>
 		</li>
 	{% empty %}
 		<li>Looks like no Jobs have been added yet</li>

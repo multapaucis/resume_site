@@ -10,8 +10,12 @@ def index(request):
 def jobs(request):
 	'''Show all Work Experience'''
 	jobs = Job.objects.order_by('date_started')
-	descriptions = JobDescription.objects
-	context = {'jobs': jobs, 'descriptions': descriptions}
+	'''descriptions = {}
+	for job in jobs:
+		d = JobDescription.objects.filter(job_title=job.id)
+		descriptions[job.id] = d
+	'''
+	context = {'jobs': jobs}
 	return render(request, 'cv/jobs.html', context)
 
 def education(request):
