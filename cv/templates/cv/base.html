@@ -1,4 +1,4 @@
-{% load bootstrap3 %}
+{% load bootstrap4 %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,30 +6,42 @@
 	<title>Matthew Freeman</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	{% bootstrap_css %}
-	{% bootstrap_javascript %}
+	{% bootstrap_javascript jquery='full' %}
 </head>
 <body>
 	<!-- Static Navbar through BOotstrap -->
-	<nav class="navbar navbar-default navbar-static-top">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="{% url 'cv:index' %}">Matthew R Freeman</a>
-			<button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-			<span>Show Items</span>
-				</button>
-			</div>
+	<nav class="navbar navbar-expand-md navbar-light" style="background-color: #98d6f9;">
+		<a class="navbar-brand" href="{% url 'cv:index' %}">Matthew R Freeman</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  		</button>
 
-			<!-- Collapsible Portion -->
-			<div id="navbarToggler" class="navbar-collapse collapse">
-				<ul class="nav navbar-nav">
-					<li><a href="{% url 'cv:jobs' %}">Jobs</a></li>
-				<li><a href="{% url 'cv:education' %}">Education</a></li>
-				<li><a href="{% url 'cv:skills' %}">Skills</a></li>
+		<!-- Collapsible Portion -->
+		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'cv:jobs' %}">Jobs</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'cv:education' %}">Education</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="{% url 'cv:skills' %}">Skills</a>
+				</li>
 			</ul>
 		</div>
 	</nav>
-{% block content %}{% endblock content %}
+	<!-- Main Content -->
+	<div class="container">
+		<div class="page-header">
+			{% block header %}{% endblock header %}
+		</div>
+		<div>
+			{% block content %}{% endblock content %}
+		</div>
+	</div>
 </body>
 </html>
 

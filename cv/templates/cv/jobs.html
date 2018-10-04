@@ -1,24 +1,32 @@
 {% extends "cv/base.html" %}
 
+{% block header %}
+	<div class="jumbotron mt-2">
+		<h1 class="display-4">Previous Work Experience</h1>
+	</div>
+{% endblock header %}
+
 {% block content %}
 
-<p>Previous Work Experience</p>
 
-<ul>
+
 	{% for job in jobs %}
-		<li>
-			{{ job }}
-			<ul>
-				{% for desc in job.descriptions %}
-					<li> {{ desc.description }} </li>
-				{% empty %}
-					<li>Looks like no Description has been added yet</li>
-				{% endfor %}
-			</ul>
-		</li>
+		<div class="card text-white bg-info mb-3">
+			<h5 class="card-header">{{ job }}</h5>
+  			<div class="card-body">
+				<ul class="card-text">
+					{% for desc in job.descriptions %}
+						<li> {{ desc.description }} </li>
+					{% empty %}
+						<li>Looks like no Description has been added yet</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
 	{% empty %}
-		<li>Looks like no Jobs have been added yet</li>
+		<div class="card text-white bg-warning mb-3">
+			<p class="card-text">Looks like no Jobs have been added yet</p>
+		</div>
 	{% endfor %}
-</ul>
 
 {% endblock content %}

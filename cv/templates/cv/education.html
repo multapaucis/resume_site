@@ -1,21 +1,31 @@
 {% extends "cv/base.html" %}
 
+
+{% block header %}
+	<div class="jumbotron mt-2">
+		<h1 class="display-4">Education</h1>
+	</div>
+{% endblock header %}
+
 {% block content %}
 
-<p>Education</p>
-
-<ul>
-	{% for school in education %}
-		<li>
-			{{ school.school_name }}
-			<ul>
+{% for school in education %}
+	<div class="card text-white bg-info mb-3">
+		<h5 class="card-header">{{ school.school_name }}</h5>
+		<div class="card-body">
+			<ul class="card-text">
 				<li>{{ school.degree }}</li>
 				<li>{{ school.location }}</li>
 			</ul>
-		</li>
-	{% empty %}
-		<li>Looks like no Education information has been added yet</li>
-	{% endfor %}
-</ul>
+		</div>
+		</div>
+{% empty %}
+	<div class="card text-white bg-info mb-3">
+		<div class="card-body">
+			<p class="card-text">Looks like no Education information has been added yet</p>
+		</div>
+	</div>
+{% endfor %}
+
 
 {% endblock content %}

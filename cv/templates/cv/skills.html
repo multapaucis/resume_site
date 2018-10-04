@@ -1,17 +1,27 @@
 {% extends "cv/base.html" %}
 
+{% block header %}
+	<div class="jumbotron mt-2">
+		<h1 class="display-4">Relevant Skills</h1>
+	</div>
+{% endblock header %}
+
 {% block content %}
 
-<p>Relevant Skills</p>
 
-<ul>
-	{% for skill in skills %}
-		<li>
-			{{ skill.skill_name }}
-		</li>
-	{% empty %}
-		<li>Looks like no Skills have been added yet</li>
-	{% endfor %}
-</ul>
+{% for skill in skills %}
+	<div class="card text-white bg-info mb-3">
+		<div class="card-body">
+			<h5 class="card-title">{{ skill.skill_name }}</h5>
+		</div>
+	</div>
+{% empty %}
+	<div class="card text-white bg-info mb-3">
+		<div class="card-body">
+			<h5 class="card-title">Looks like no Skills have been added yet</h5>
+		</div>
+	</div>
+{% endfor %}
+
 
 {% endblock content %}

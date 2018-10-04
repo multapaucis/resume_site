@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #Third Party Apps
-    'bootstrap3',
+    'bootstrap4',
     
     #My APPs
     'cv',
@@ -126,6 +126,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 # Settings for django-bootstrap3
-BOOTSTRAP3 ={
+BOOTSTRAP4 ={
 	'include_jquery': True,
 	}
