@@ -9,7 +9,7 @@ def index(request):
 
 def jobs(request):
 	'''Show all Work Experience'''
-	jobs = Job.objects.order_by('date_started')
+	jobs = Job.objects.order_by('-date_started')
 	'''descriptions = {}
 	for job in jobs:
 		d = JobDescription.objects.filter(job_title=job.id)
