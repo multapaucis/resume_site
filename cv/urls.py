@@ -14,4 +14,6 @@ urlpatterns = [
     path('education', views.education, name='education'),
     #show all skills
     path('skills' , views.skills, name='skills'),
+    #contact information
+    path('contact' , views.contact, name='contact'),
 ]

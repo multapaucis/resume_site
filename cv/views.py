@@ -29,3 +29,7 @@ def skills(request):
 	skills = Skill.objects.order_by('skill_type')
 	context = {'skills': skills}
 	return render(request, 'cv/skills.html', context)
+
+def contact(request):
+	'''The contact me page'''
+	return render(request, 'cv/contact.html')
