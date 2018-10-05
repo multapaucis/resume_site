@@ -1,0 +1,16 @@
+{% extends "cv/base.html" %}
+
+{% block header %}
+	<div class="jumbotron mt-2">
+		<h1 class="display-4">PDF Resume</h1>
+	</div>
+{% endblock header %}
+
+{% block content %}
+<object data="{% url 'cv:downloadPDF' %}" type="application/pdf" width="100%" height="600"> 
+	<p>It looks like your browser can't preview the PDF</p>  
+</object>
+<h3><a href="{% url 'cv:downloadPDF' %}">Click here to download the PDF file.</a> Take as many as you want.</h3>
+
+
+{% endblock content %}

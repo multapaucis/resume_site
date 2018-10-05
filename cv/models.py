@@ -51,3 +51,12 @@ class Skill(models.Model):
 	def __str__(self):
 		'''Returns a string representing the Skill'''
 		return self.skill_name
+
+class Resume(models.Model):
+	"""PDF Version of the Resume"""
+	res_name = models.CharField(max_length=200)
+	file = models.FileField(upload_to='cv/docs/')
+	
+	def __str__(self):
+		'''Returns a string representing the Resume'''
+		return self.res_name

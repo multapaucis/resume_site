@@ -16,4 +16,8 @@ urlpatterns = [
     path('skills' , views.skills, name='skills'),
     #contact information
     path('contact' , views.contact, name='contact'),
+    #Provide a preview of the PDF Version of Resume and option toDownload
+    path('download' , views.download, name='download'),
+    #Provide a PDF Version of Resume for View and Download
+    path('downloadPDF' , views.downloadPDF, name='downloadPDF'),
 ]

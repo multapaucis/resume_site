@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.http import FileResponse, Http404
 
-from .models import Job, JobDescription, Education, Skill
+from .models import Job, JobDescription, Education, Skill, Resume
 
 # Create your views here.
 def index(request):
@@ -33,3 +34,15 @@ def skills(request):
 def contact(request):
 	'''The contact me page'''
 	return render(request, 'cv/contact.html')
+
+def download(request):
+	'''Show PDF version of Resume'''
+	pdfRes = Resume.objects.get(res_name="current")
+	context= {"pdfRes": pdfRes}
+	return render(request, 'cv/pdf.html', context)
+
+def downloadPDF(request):
+	'''Return PDF version of Resume'''
+	pdfRes = Resume.objects.get(res_name="current")
+	response = FileResponse(open(pdfRes.file.url, 'rb'))
+	return response
