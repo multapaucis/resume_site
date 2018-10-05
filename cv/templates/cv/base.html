@@ -1,7 +1,8 @@
 {% load bootstrap4 %}
+{% load static %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height:100%">
 <head>
 	<title>Matthew Freeman</title>
 	<meta charset="utf-8">
@@ -10,16 +11,16 @@
 	{% bootstrap_css %}
 	{% bootstrap_javascript jquery='full' %}
 </head>
-<body>
-	<!-- Static Navbar through BOotstrap -->
+<body style="background-image: url('{% static 'cv/mountainbg.png' %}');background-repeat: no-repeat; background-size: cover; background-position: center bottom; background-attachment: fixed; height:100%">
+	<!-- Static Navbar through Bootstrap -->
 	<nav class="navbar navbar-expand-md navbar-light" style="background-color: #98d6f9;">
 		<a class="navbar-brand" href="{% url 'cv:index' %}">Matthew R Freeman</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
     		<span class="navbar-toggler-icon"></span>
   		</button>
 
 		<!-- Collapsible Portion -->
-		<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+		<div class="collapse navbar-collapse" id="navbarToggler">
 			<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
 				<li class="nav-item">
 					<a class="nav-link" href="{% url 'cv:jobs' %}">Jobs</a>
@@ -40,14 +41,12 @@
 		</div>
 	</nav>
 	<!-- Main Content -->
-	<div class="container">
 		<div class="page-header">
 			{% block header %}{% endblock header %}
 		</div>
-		<div>
+		<div class="container">
 			{% block content %}{% endblock content %}
 		</div>
-	</div>
 </body>
 </html>
 
