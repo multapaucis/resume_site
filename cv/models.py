@@ -43,10 +43,23 @@ class Education(models.Model):
 		return self.school_name
 
 
+class SkillType(models.Model):
+	"""Releveant Skills"""
+	type_name = models.CharField(max_length=200)
+
+	def getSkills(self):
+		return Skill.objects.filter(stype=self)
+
+	skills = property(getSkills)
+	
+	def __str__(self):
+		'''Returns a string representing the Skill Type'''
+		return self.type_name
+
 class Skill(models.Model):
 	"""Releveant Skills"""
 	skill_name = models.CharField(max_length=200)
-	skill_type = models.CharField(max_length=200)
+	stype = models.ForeignKey(SkillType, on_delete=models.PROTECT)
 	
 	def __str__(self):
 		'''Returns a string representing the Skill'''

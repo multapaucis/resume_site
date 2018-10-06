@@ -1,7 +1,7 @@
 from django.shortcuts import render
-from django.http import FileResponse, Http404
+from django.http import FileResponse
 
-from .models import Job, JobDescription, Education, Skill, Resume
+from .models import Job, JobDescription, Education, SkillType, Resume
 
 # Create your views here.
 def index(request):
@@ -11,11 +11,6 @@ def index(request):
 def jobs(request):
 	'''Show all Work Experience'''
 	jobs = Job.objects.order_by('-date_started')
-	'''descriptions = {}
-	for job in jobs:
-		d = JobDescription.objects.filter(job_title=job.id)
-		descriptions[job.id] = d
-	'''
 	context = {'jobs': jobs}
 	return render(request, 'cv/jobs.html', context)
 
@@ -27,8 +22,8 @@ def education(request):
 
 def skills(request):
 	'''Show all Skills'''
-	skills = Skill.objects.order_by('skill_type')
-	context = {'skills': skills}
+	skillTypes = SkillType.objects.all()
+	context = {'skillTypes': skillTypes}
 	return render(request, 'cv/skills.html', context)
 
 def contact(request):

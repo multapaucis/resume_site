@@ -9,19 +9,26 @@
 {% block content %}
 
 
-{% for skill in skills %}
-	<div class="card text-white bg-info mb-3">
-		<div class="card-body">
-			<h5 class="card-title">{{ skill.skill_name }}</h5>
+<div class="card-columns">
+	{% for type in skillTypes %}
+		<div class="card mb-3">
+			<h5 class="card-header text-white bg-info">{{ type.type_name }}</h5>
+			<ul class="list-group list-group-flush">
+				{% for skill in type.skills %}
+					<li class="list-group-item">{{ skill.skill_name }}</li>
+				{% empty %}
+					<li class="list-group-item">Looks like no Skills have been added for this one yet.</li>
+				{% endfor %}
+			</ul>
 		</div>
-	</div>
-{% empty %}
-	<div class="card text-white bg-info mb-3">
-		<div class="card-body">
-			<h5 class="card-title">Looks like no Skills have been added yet</h5>
+	{% empty %}
+		<div class="card text-white bg-info mb-3">
+			<div class="card-body">
+				<h5 class="card-title">Looks like no Skills have been added yet</h5>
+			</div>
 		</div>
-	</div>
-{% endfor %}
+	{% endfor %}
+</div>
 
 
 {% endblock content %}
