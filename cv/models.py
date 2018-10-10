@@ -57,7 +57,7 @@ class SkillType(models.Model):
 		return self.type_name
 
 class Skill(models.Model):
-	"""Releveant Skills"""
+	"""Relevant Skills"""
 	skill_name = models.CharField(max_length=200)
 	stype = models.ForeignKey(SkillType, on_delete=models.PROTECT)
 	
@@ -73,3 +73,13 @@ class Resume(models.Model):
 	def __str__(self):
 		'''Returns a string representing the Resume'''
 		return self.res_name
+
+class Interest(models.Model):
+	"""Model for my Interests"""
+	interest_name = models.CharField(max_length=200)
+	description = models.TextField()
+	
+	def __str__(self):
+		'''Returns a string representing the Interest'''
+		return self.interest_name
+		
