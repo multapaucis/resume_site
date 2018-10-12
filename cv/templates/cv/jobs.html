@@ -14,8 +14,9 @@
 		<div class="card border-secondary mb-3">
 			<h5 class="card-header text-white" style="background-color: #135c96;">{{ job }}</h5>
   			<div class="card-body">
-  				<h6 class="card-subtitle mb-2">{{ job.date_started|date:"F Y"}} - {{ job.date_finished|date:"F Y" }}</h6>
-  				<h6 class="card-title">{{ job.location }}</h6>
+  				<h6 class="card-title mb-2">{{ job.company }}</h6>
+  				<h6 class="card-title text-secondary mb-1">{{ job.location }}</h6>
+  				<h6 class="card-title text-secondary mb-1">{{ job.date_started|date:"F Y"}} - {{ job.date_finished|date:"F Y" }}</h6>
 				<ul class="card-text">
 					{% for desc in job.descriptions %}
 						<li> {{ desc.description }} </li>
