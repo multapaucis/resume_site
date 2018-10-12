@@ -1,2 +1,0 @@
-This is a placeholder to ensure that the Static folder is included in the Project. This folder is 
-for Django to collect Static files
