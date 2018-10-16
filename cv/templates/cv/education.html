@@ -13,6 +13,7 @@
 	<div class="card border-secondary mb-3">
 		<h5 class="card-header text-white" style="background-color: #135c96;">{{ school.school_name }}</h5>
 		<div class="card-body">
+			<h6 class="card-title text-secondary mtb-2">{{ school.date_started|date:"F Y"}} - {{ school.date_finished|date:"F Y" }}</h6>
 			<ul class="card-text">
 				<li>{{ school.degree }}</li>
 				<li>{{ school.location }}</li>
