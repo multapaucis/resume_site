@@ -14,19 +14,17 @@
 	<h3 class="card-header text-white" style="background-color: #135c96;">About Me</h3>
 	<div class="card-body">
 		<img class="rounded-circle" src="{% static 'cv/selfSnow.jpg' %}" alt="Photo of Matt Freeman"  style="float: left; margin:10px; max-height:200px">
-		<p class="card-text">I’m a Third Generation San Diegan, but have spent time living in D.C., Wyoming, and currently find my self in Colorado living my childhood dream of having a season pass for Snowboarding.
+		<p class="card-text">I’m a Third Generation San Diegan, but have spent time living in D.C., Wyoming, and currently find my self in Colorado living my childhood dream of getting a season pass for Snowboarding.
 		</p>
-		<p class="card-text">I've been making websites since I was 11 years writing in plain HTML on GeoCities. I'm now looking to do it for a living.</p>
+		<p class="card-text">I have been making websites since I was 11 years old, writing in plain HTML on GeoCities. Since then I've learned a few more complicated methods for web design. Programming has always drawn me in because you can create something from nothing, there are always new things to learn, and there are also always ways to improve what you've already built. After years of programming in my spare time, I feel I'm finally ready to do it for a living.</p>
+		<p class="card-text">Please take a look around my website. You'll find information on my work and education history, contact information, a GitHub link to see my portfolio, and even a PDF version of my resume if you prefer things old school.</p>
 	</div>
-</div>
-<div class="card border-secondary mb-3">
-	<h4 class="card-header text-white" style="background-color: #135c96;">Interests</h4>
-	
-	<div class="card-body">
-		<div class="card-deck">
+	<h5 class="card-title text-white p-2 mb-0" style="background-color: #166eb6;">Interests</h5>
+	<div class="card-body pt-2">
+		<div class="card-deck ">
 			{% for interest in interests %}
-			<div class="card">
-				<h5 class="card-header text-white" style="background-color: #298cce;">{{ interest.interest_name}}</h5>
+			<div class="card m-1">
+				<h6 class="card-header text-white" style="background-color: #1c89e3;">{{ interest.interest_name}}</h6>
 				<div class="card-body">
 					<p class="card-text">{{interest.description}}
 					</p>
@@ -40,8 +38,7 @@
 			</div>
 			{% endfor %}
 		</div>
-	</div>
-	
+	</div>	
 </div>
 
 {% endblock content %}
