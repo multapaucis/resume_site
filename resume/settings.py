@@ -25,7 +25,7 @@ SECRET_KEY = 'c44o=7+h))07a(4a2!g)32^%kd-al99x$))um0&-!k)s^gnrh8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['mfreeresume.herokuapp.com']
+ALLOWED_HOSTS = ['mfreeresume.herokuapp.com', 'mfreewebdev.com']
 
 
 # Application definition
